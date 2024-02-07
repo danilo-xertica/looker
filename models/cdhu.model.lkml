@@ -24,4 +24,4 @@ explore: area_risco_teste5 {}
 explore: ubs_est_sp {}
 explore: t_inund {}
 explore: vw_empreendimentos_lat_long {}
-explore: vw_looker_acompanhamento_de_acoes {}
+explore: vw_acompanhamento_de_acoes {}
