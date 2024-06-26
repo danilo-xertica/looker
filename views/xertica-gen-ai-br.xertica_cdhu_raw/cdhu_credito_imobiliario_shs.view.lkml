@@ -98,9 +98,11 @@ view: cdhu_credito_imobiliario_shs {
     sql: ${TABLE}.uh_em_producao ;;
   }
   dimension: uh_entregue {
-    type: number
-    sql:REPLACE(${TABLE}.uh_entregue, '\302\240', '') ;;
+    type: string
+    sql:${TABLE}.uh_entregue
+    convert_type: number;;
   }
+
   dimension: uh_lotes_viabilizados {
     type: number
     sql: ${TABLE}.uh_lotes_viabilizados ;;
