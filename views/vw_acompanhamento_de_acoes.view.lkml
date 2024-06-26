@@ -25,6 +25,12 @@ view: vw_acompanhamento_de_acoes {
     type: number
     sql: ${TABLE}.uhs_dom ;;
   }
+
+  dimension: meta_2024_2027{
+    type: number
+    sql: ${TABLE}.Meta_2024_2027 ;;
+  }
+
   measure: count {
     type: count
   }

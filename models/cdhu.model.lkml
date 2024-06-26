@@ -25,3 +25,4 @@ explore: ubs_est_sp {}
 explore: t_inund {}
 explore: vw_empreendimentos_lat_long {}
 explore: vw_acompanhamento_de_acoes {}
+explore: cdhu_credito_imobiliario_shs {}
