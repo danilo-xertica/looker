@@ -99,8 +99,7 @@ view: cdhu_credito_imobiliario_shs {
   }
   dimension: uh_entregue {
     type: number
-    sql: CAST(${TABLE}.uh_entregue AS VARCHAR) || CONVERT(CAST(${TABLE}.uh_entregue AS VARCHAR) USING utf8) ;;
-
+    sql:REPLACE(${TABLE}.uh_entregue, '\302\240', '') ;;
   }
   dimension: uh_lotes_viabilizados {
     type: number
