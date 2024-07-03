@@ -99,7 +99,7 @@ view: cdhu_credito_imobiliario_shs {
   }
   dimension: uh_entregue {
     type: number
-    sql:${TABLE}.uh_entregue;;
+    sql: ${TABLE}.uh_entregue;;
   }
 
   dimension: uh_lotes_viabilizados {
@@ -120,5 +120,10 @@ view: cdhu_credito_imobiliario_shs {
   }
   measure: count {
     type: count
+  }
+
+  measure: entregue_measure {
+    type: sum
+    sql: COALESCE(SAFE_CAST(${TABLE}.uh_entregue AS NUMERIC), 0) ;;
   }
 }

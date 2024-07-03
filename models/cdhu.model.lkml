@@ -25,4 +25,11 @@ explore: ubs_est_sp {}
 explore: t_inund {}
 explore: vw_empreendimentos_lat_long {}
 explore: vw_acompanhamento_de_acoes {}
-explore: cdhu_credito_imobiliario_shs {}
+explore: cdhu_credito_imobiliario_shs {
+  join: cdhu_novas_ppps {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${cdhu_credito_imobiliario_shs.cod_ibge_texto} = ${cdhu_novas_ppps.cod_ibge_texto} ;;
+  }
+}
+explore: atendimento_habitacional_detalhado{}
