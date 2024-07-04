@@ -24,6 +24,7 @@ view: atendimento_habitacional_raw {
        WHERE programa != 'CCI';;
   }
 
+
   dimension: cod_ibge_texto {
     type: string
     sql: ${TABLE}.cod_ibge_texto ;;
