@@ -141,6 +141,11 @@ view: gov_base_amostra_familia {
     type: string
     sql: ${TABLE}.vlr_renda_media_fam ;;
   }
+  dimension: latLong{
+    type: location
+    sql_latitude: ${latitude};;
+    sql_longitude: ${longitude};;
+  }
   measure: count {
     type: count
   }

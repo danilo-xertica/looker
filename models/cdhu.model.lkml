@@ -35,3 +35,4 @@ explore: cdhu_credito_imobiliario_shs {
 explore: atendimento_habitacional_detalhado{}
 explore: gov_base_amostra_familia {}
 explore: gov_base_amostra_pessoa {}
+explore: gov_base_amostra_familia_count {}
