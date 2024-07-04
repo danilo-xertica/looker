@@ -1,89 +1,65 @@
 view: gov_base_amostra_pessoa {
-  sql_table_name: `xertica-gen-ai-br.xertica_cdhu_raw.gov_base_amostra_pessoa` ;;
+  sql_table_name: `xertica-gen-ai-br.xertica_cdhu_refined.gov_base_amostra_pessoa` ;;
 
+  dimension: afastado_trab {
+    type: string
+    sql: ${TABLE}.afastado_trab ;;
+  }
+  dimension: agricultura_trab {
+    type: string
+    sql: ${TABLE}.agricultura_trab ;;
+  }
+  dimension: ano_serie_frequenta {
+    type: string
+    sql: ${TABLE}.ano_serie_frequenta ;;
+  }
+  dimension: ano_serie_frequentou {
+    type: string
+    sql: ${TABLE}.ano_serie_frequentou ;;
+  }
   dimension: cd_ibge {
     type: string
     sql: ${TABLE}.cd_ibge ;;
+  }
+  dimension: certidao_registrada {
+    type: string
+    sql: ${TABLE}.certidao_registrada ;;
   }
   dimension: classf {
     type: string
     sql: ${TABLE}.classf ;;
   }
-  dimension: cod_afastado_trab_memb {
-    type: string
-    sql: ${TABLE}.cod_afastado_trab_memb ;;
-  }
-  dimension: cod_agricultura_trab_memb {
-    type: string
-    sql: ${TABLE}.cod_agricultura_trab_memb ;;
-  }
-  dimension: cod_ano_serie_frequenta_memb {
-    type: string
-    sql: ${TABLE}.cod_ano_serie_frequenta_memb ;;
-  }
-  dimension: cod_ano_serie_frequentou_memb {
-    type: string
-    sql: ${TABLE}.cod_ano_serie_frequentou_memb ;;
-  }
-  dimension: cod_certidao_registrada_pessoa {
-    type: string
-    sql: ${TABLE}.cod_certidao_registrada_pessoa ;;
-  }
-  dimension: cod_concluiu_frequentou_memb {
-    type: string
-    sql: ${TABLE}.cod_concluiu_frequentou_memb ;;
-  }
-  dimension: cod_curso_frequenta_memb {
-    type: string
-    sql: ${TABLE}.cod_curso_frequenta_memb ;;
-  }
-  dimension: cod_curso_frequentou_pessoa_memb {
-    type: string
-    sql: ${TABLE}.cod_curso_frequentou_pessoa_memb ;;
-  }
-  dimension: cod_deficiencia_memb {
-    type: string
-    sql: ${TABLE}.cod_deficiencia_memb ;;
-  }
-  dimension: cod_escola_local_memb {
-    type: string
-    sql: ${TABLE}.cod_escola_local_memb ;;
-  }
-  dimension: cod_local_nascimento_pessoa {
-    type: string
-    sql: ${TABLE}.cod_local_nascimento_pessoa ;;
-  }
-  dimension: cod_parentesco_rf_pessoa {
-    type: string
-    sql: ${TABLE}.cod_parentesco_rf_pessoa ;;
-  }
   dimension: cod_principal_trab_memb {
     type: string
     sql: ${TABLE}.cod_principal_trab_memb ;;
   }
-  dimension: cod_raca_cor_pessoa {
+  dimension: concluiu_frequentou {
     type: string
-    sql: ${TABLE}.cod_raca_cor_pessoa ;;
+    sql: ${TABLE}.concluiu_frequentou ;;
   }
-  dimension: cod_sabe_ler_escrever_memb {
+  dimension: curso_frequenta {
     type: string
-    sql: ${TABLE}.cod_sabe_ler_escrever_memb ;;
+    sql: ${TABLE}.curso_frequenta ;;
   }
-  dimension: cod_sexo_pessoa {
+  dimension: curso_frequentou {
     type: string
-    sql: ${TABLE}.cod_sexo_pessoa ;;
+    sql: ${TABLE}.curso_frequentou ;;
   }
-  dimension: cod_trabalho_12_meses_memb {
+  dimension: deficiencia {
     type: string
-    sql: ${TABLE}.cod_trabalho_12_meses_memb ;;
+    sql: ${TABLE}.deficiencia ;;
   }
-  dimension: cod_trabalhou_memb {
+  dimension: escola_local {
     type: string
-    sql: ${TABLE}.cod_trabalhou_memb ;;
+    sql: ${TABLE}.escola_local ;;
   }
   dimension: estrato {
     type: string
     sql: ${TABLE}.estrato ;;
+  }
+  dimension: frequenta_escola {
+    type: string
+    sql: ${TABLE}.frequenta_escola ;;
   }
   dimension: id_familia {
     type: string
@@ -97,9 +73,17 @@ view: gov_base_amostra_pessoa {
     type: string
     sql: ${TABLE}.idade ;;
   }
-  dimension: ind_frequenta_escola_memb {
+  dimension: local_nascimento {
     type: string
-    sql: ${TABLE}.ind_frequenta_escola_memb ;;
+    sql: ${TABLE}.local_nascimento ;;
+  }
+  dimension: municipio {
+    type: string
+    sql: ${TABLE}.municipio ;;
+  }
+  dimension: parentesco_rf_pessoa {
+    type: string
+    sql: ${TABLE}.parentesco_rf_pessoa ;;
   }
   dimension: peso_fam {
     type: string
@@ -109,9 +93,33 @@ view: gov_base_amostra_pessoa {
     type: string
     sql: ${TABLE}.peso_pes ;;
   }
+  dimension: principal_trab {
+    type: string
+    sql: ${TABLE}.principal_trab ;;
+  }
   dimension: qtd_meses_12_meses_memb {
     type: string
     sql: ${TABLE}.qtd_meses_12_meses_memb ;;
+  }
+  dimension: raca_cor {
+    type: string
+    sql: ${TABLE}.raca_cor ;;
+  }
+  dimension: sabe_ler_escrever {
+    type: string
+    sql: ${TABLE}.sabe_ler_escrever ;;
+  }
+  dimension: sexo {
+    type: string
+    sql: ${TABLE}.sexo ;;
+  }
+  dimension: trabalho_12_meses {
+    type: string
+    sql: ${TABLE}.trabalho_12_meses ;;
+  }
+  dimension: trabalhou {
+    type: string
+    sql: ${TABLE}.trabalhou ;;
   }
   dimension: val_outras_rendas_memb {
     type: string

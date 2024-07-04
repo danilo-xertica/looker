@@ -1,69 +1,45 @@
 view: gov_base_amostra_familia {
-  sql_table_name: `xertica-gen-ai-br.xertica_cdhu_raw.gov_base_amostra_familia` ;;
+  sql_table_name: `xertica-gen-ai-br.xertica_cdhu_refined.gov_base_amostra_familia` ;;
 
+  dimension: abaste_agua_domic_fam {
+    type: string
+    sql: ${TABLE}.abaste_agua_domic_fam ;;
+  }
+  dimension: agua_canalizada_fam {
+    type: string
+    sql: ${TABLE}.agua_canalizada_fam ;;
+  }
+  dimension: banheiro_domic_fam {
+    type: string
+    sql: ${TABLE}.banheiro_domic_fam ;;
+  }
+  dimension: calcamento_domic_fam {
+    type: string
+    sql: ${TABLE}.calcamento_domic_fam ;;
+  }
   dimension: cd_ibge {
     type: string
     sql: ${TABLE}.cd_ibge ;;
+  }
+  dimension: centroide {
+    type: string
+    sql: ${TABLE}.centroide ;;
   }
   dimension: classf {
     type: string
     sql: ${TABLE}.classf ;;
   }
-  dimension: cod_abaste_agua_domic_fam {
+  dimension: classificacao {
     type: string
-    sql: ${TABLE}.cod_abaste_agua_domic_fam ;;
-  }
-  dimension: cod_agua_canalizada_fam {
-    type: string
-    sql: ${TABLE}.cod_agua_canalizada_fam ;;
-  }
-  dimension: cod_banheiro_domic_fam {
-    type: string
-    sql: ${TABLE}.cod_banheiro_domic_fam ;;
-  }
-  dimension: cod_calcamento_domic_fam {
-    type: string
-    sql: ${TABLE}.cod_calcamento_domic_fam ;;
+    sql: ${TABLE}.classificacao ;;
   }
   dimension: cod_centro_assist_fam {
     type: string
     sql: ${TABLE}.cod_centro_assist_fam ;;
   }
-  dimension: cod_destino_lixo_domic_fam {
-    type: string
-    sql: ${TABLE}.cod_destino_lixo_domic_fam ;;
-  }
   dimension: cod_eas_fam {
     type: string
     sql: ${TABLE}.cod_eas_fam ;;
-  }
-  dimension: cod_escoa_sanitario_domic_fam {
-    type: string
-    sql: ${TABLE}.cod_escoa_sanitario_domic_fam ;;
-  }
-  dimension: cod_especie_domic_fam {
-    type: string
-    sql: ${TABLE}.cod_especie_domic_fam ;;
-  }
-  dimension: cod_familia_indigena_fam {
-    type: string
-    sql: ${TABLE}.cod_familia_indigena_fam ;;
-  }
-  dimension: cod_iluminacao_domic_fam {
-    type: string
-    sql: ${TABLE}.cod_iluminacao_domic_fam ;;
-  }
-  dimension: cod_local_domic_fam {
-    type: string
-    sql: ${TABLE}.cod_local_domic_fam ;;
-  }
-  dimension: cod_material_domic_fam {
-    type: string
-    sql: ${TABLE}.cod_material_domic_fam ;;
-  }
-  dimension: cod_material_piso_fam {
-    type: string
-    sql: ${TABLE}.cod_material_piso_fam ;;
   }
   dimension: dat_alteracao_fam {
     type: string
@@ -77,13 +53,29 @@ view: gov_base_amostra_familia {
     type: string
     sql: ${TABLE}.dat_cadastramento_fam ;;
   }
-  dimension: estrato {
+  dimension: destino_lixo_domic_fam {
     type: string
-    sql: ${TABLE}.estrato ;;
+    sql: ${TABLE}.destino_lixo_domic_fam ;;
+  }
+  dimension: escoa_sanitario_domic_fam {
+    type: string
+    sql: ${TABLE}.escoa_sanitario_domic_fam ;;
+  }
+  dimension: especie_domic_fam {
+    type: string
+    sql: ${TABLE}.especie_domic_fam ;;
+  }
+  dimension: familia_indigena_fam {
+    type: string
+    sql: ${TABLE}.familia_indigena_fam ;;
   }
   dimension: id_familia {
     type: string
     sql: ${TABLE}.id_familia ;;
+  }
+  dimension: iluminacao_domic_fam {
+    type: string
+    sql: ${TABLE}.iluminacao_domic_fam ;;
   }
   dimension: ind_familia_quilombola_fam {
     type: string
@@ -93,9 +85,33 @@ view: gov_base_amostra_familia {
     type: string
     sql: ${TABLE}.ind_parc_mds_fam ;;
   }
+  dimension: latitude {
+    type: number
+    sql: ${TABLE}.latitude ;;
+  }
+  dimension: local_domic_fam {
+    type: string
+    sql: ${TABLE}.local_domic_fam ;;
+  }
+  dimension: longitude {
+    type: number
+    sql: ${TABLE}.longitude ;;
+  }
   dimension: marc_pbf {
     type: string
     sql: ${TABLE}.marc_pbf ;;
+  }
+  dimension: material_domic_fam {
+    type: string
+    sql: ${TABLE}.material_domic_fam ;;
+  }
+  dimension: material_piso_fam {
+    type: string
+    sql: ${TABLE}.material_piso_fam ;;
+  }
+  dimension: municipio {
+    type: string
+    sql: ${TABLE}.municipio ;;
   }
   dimension: nom_centro_assist_fam {
     type: string
