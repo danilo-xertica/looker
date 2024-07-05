@@ -34,7 +34,7 @@ view: gov_base_amostra_familia_count {
   }
 
   dimension: classificacao {
-    type: number
+    type: string
     sql: ${TABLE}.classificacao ;;
   }
 
@@ -54,4 +54,17 @@ view: gov_base_amostra_familia_count {
     sql_longitude: ${longitude};;
   }
 
+  dimension: classificacao_sts {
+    type: number
+    sql:
+      CASE
+        WHEN ${TABLE}.classificacao = 'Miserável'           THEN '1'
+        WHEN ${TABLE}.classificacao = 'Pobre'               THEN '2'
+        WHEN ${TABLE}.classificacao = 'Vulnerável'          THEN '3'
+        WHEN ${TABLE}.classificacao = 'Classe Média Baixa'  THEN '4'
+        WHEN ${TABLE}.classificacao = 'Classe Média'        THEN '5'
+        WHEN ${TABLE}.classificacao = 'Classe Média Alta'   THEN '6'
+        ELSE 'Desconhecido'
+      END ;;
+  }
 }

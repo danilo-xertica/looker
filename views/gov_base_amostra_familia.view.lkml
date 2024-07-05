@@ -134,12 +134,12 @@ view: gov_base_amostra_familia {
     sql: ${TABLE}.qtd_comodos_dormitorio_fam ;;
   }
   dimension: qtde_pessoas {
-    type: string
-    sql: ${TABLE}.qtde_pessoas ;;
+    type: number
+    sql: CAST(${TABLE}.qtde_pessoas AS NUMERIC) ;;
   }
   dimension: vlr_renda_media_fam {
-    type: string
-    sql: ${TABLE}.vlr_renda_media_fam ;;
+    type: number
+    sql: CAST(${TABLE}.vlr_renda_media_fam AS NUMERIC) ;;
   }
   dimension: latLong{
     type: location
@@ -149,4 +149,9 @@ view: gov_base_amostra_familia {
   measure: count {
     type: count
   }
+  measure: media_pessoas_por_familia {
+    type: average
+    sql: ${qtde_pessoas} ;;
+  }
+
 }

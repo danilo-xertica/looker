@@ -36,3 +36,23 @@ explore: atendimento_habitacional_detalhado{}
 explore: gov_base_amostra_familia {}
 explore: gov_base_amostra_pessoa {}
 explore: gov_base_amostra_familia_count {}
+# explore: gov_base_amostra_familia_join {
+#   join: gov_base_amostra_pessoa_join {
+#     type: left_outer
+#     relationship: many_to_one
+#     sql_on: ${gov_base_amostra_pessoa_join.id_familia} = ${gov_base_amostra_familia_join.id_familia} ;;
+#   }
+explore: gov_base_amostra_familia_join {
+  join: gov_base_amostra_pessoa_join {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${gov_base_amostra_pessoa_join.id_familia} = ${gov_base_amostra_familia_join.id_familia} ;;
+  }
+
+  join: programa_classe {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${gov_base_amostra_familia_join.cd_ibge} = ${programa_classe.cod_ibge_texto} ;;
+  }
+
+}
