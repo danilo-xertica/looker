@@ -1,55 +1,69 @@
-view: planilha_atendimento_habitacional {
-  sql_table_name: `xertica-gen-ai-br.xertica_cdhu_refined.planilha_atendimento_habitacional` ;;
+view: atendimento_habitacional_detalhado {
+  sql_table_name: `xertica-gen-ai-br.xertica_cdhu_refined.vwPlanilha_Atendimento_Hab_Union` ;;
 
-  dimension: invest_estadual_milhoes {
-    type: number
-    sql: ${TABLE}.InvestEstadual_Milhoes ;;
-  }
-  dimension: invest_total_milhoes {
-    type: number
-    sql: ${TABLE}.InvestTotal_Milhoes ;;
-  }
-  dimension: itens_habitacionais {
-    type: string
-    sql: ${TABLE}.Itens_Habitacionais ;;
-  }
-  dimension: itens_habitacionais_sort {
-    type: string
-    sql: ${TABLE}.Itens_Habitacionais_Sort ;;
-  }
-  dimension: meta_2024_2027 {
-    type: number
-    sql: ${TABLE}.Meta_2024_2027 ;;
-  }
   dimension: modalidade {
     type: string
-    sql: ${TABLE}.Modalidade ;;
+    sql: ${TABLE}.modalidade ;;
   }
-  dimension: modalidade_sort {
+
+  dimension: cod_ibge_texto {
     type: string
-    sql: ${TABLE}.Modalidade_Sort ;;
+    sql: ${TABLE}.cod_ibge_texto ;;
   }
-  dimension: responsavel {
+
+  dimension: municipio {
     type: string
-    sql: ${TABLE}.Responsavel ;;
+    sql: UPPER(${TABLE}.municipio);;
   }
+
+  dimension: programa {
+    type: string
+    sql: ${TABLE}.programa ;;
+  }
+
+  dimension: uh_entregue {
+    type: number
+    sql: ${TABLE}.uh_entregue ;;
+  }
+
+  dimension: uh_lotes_viabilizados {
+    type: number
+    sql: ${TABLE}.uh_lotes_viabilizados ;;
+  }
+
+  dimension: investimento_total_uh_entregue {
+    type: number
+    sql: ${TABLE}.investimento_total_uh_entregue ;;
+  }
+
+  dimension: uh_lotes {
+    type: number
+    sql: ${TABLE}.uh_lotes ;;
+  }
+
+  dimension: valor_aporte_uh_entregue {
+    type: number
+    sql: ${TABLE}.valor_aporte_uh_entregue ;;
+  }
+
+  dimension: latitude {
+    type: number
+    sql: ${TABLE}.latitude ;;
+  }
+
+  dimension: longitude {
+    type: number
+    sql: ${TABLE}.longitude ;;
+  }
+
   dimension: status {
     type: string
-    sql: ${TABLE}.Status ;;
+    sql: ${TABLE}.status ;;
   }
-  dimension: telefone {
-    type: string
-    sql: ${TABLE}.Telefone ;;
-  }
-  dimension: uhs_dom {
-    type: number
-    sql: ${TABLE}.uhs_dom ;;
-  }
-  dimension: vlr_referencia_ago_23 {
-    type: number
-    sql: ${TABLE}.Vlr_Referencia_ago_23 ;;
-  }
-  measure: count {
-    type: count
+
+  dimension: geolocation {
+    type:  location
+    sql_latitude: ${latitude};;
+    sql_longitude: ${longitude};;
   }
 }
